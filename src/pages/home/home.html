@@ -1,0 +1,56 @@
+     <ion-header>
+        <ion-navbar color="maroon">
+          <ion-title>
+            Coffee Machine App 
+          </ion-title>
+        </ion-navbar>
+      </ion-header>
+      
+      <ion-content padding>
+        
+           
+       <ion-item >
+       <ion-input text-center type="text" placeholder="Name" [(ngModel)]="name"></ion-input>
+       </ion-item>
+       <h1 text-center> TOPPINGS</h1>
+       <ion-item center>
+       <ion-label>Whipped Cream</ion-label>
+        <ion-checkbox (click)="onWhip()" [(ngModel)]="whip" ></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>Black Coffee</ion-label>
+             <ion-checkbox (click)="onCof()" [(ngModel)]="cof"></ion-checkbox>
+              </ion-item>
+            <ion-item>
+       <ion-label>Chocolate</ion-label>
+        <ion-checkbox (click)="onChoc()" [(ngModel)]="choc"  ></ion-checkbox>
+         </ion-item>
+         <h1 text-center>QUANTITY</h1>
+         <div class="co">
+           <button  ion-button color="light" (click) = "onPlus()">+</button>
+              {{results}}
+         <button  ion-button color="light" (click) = "onMinus()">-</button> 
+         </div>
+         <h1 text-center>Order Summary</h1> 
+                
+         <div *ngIf="value ==1">
+           {{name}}<br>
+           {{whp}}<br>
+           {{chc}}<br>
+           {{cof}}<br>
+           Qantity : {{results}}
+           <P>Thank you</P>
+
+         </div>
+
+
+          <button id="order" ion-button color="light"(click)="onOrder()">Order</button>
+            <br>
+            
+            <br>
+             <div id="coco"> 
+            <button id="reset" ion-button color="light" (click)= "onReset()">Reset</button><br><br>
+             
+             </div>
+        
+      </ion-content>
